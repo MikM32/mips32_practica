@@ -29,7 +29,7 @@ ssort:
 for1:	add $s4, $s2, $zero
 		
 	addi $s5, $s4, 1
-	add $s6, $a1, $zero
+	addi $s6, $a1, 0
 for2:	mul $t4, $s5, 4
 	add $t4, $t4, $a0
 	lw $t4, 0($t4)
@@ -54,6 +54,9 @@ else:	addi $s5, $s5, 1
 	add $a1, $zero, $s2
 	add $a2, $zero, $s4
 	jal swap
+	
+	add $a0, $s0, $zero
+	add $a1, $s1, $zero
 
 	addi $s2, $s2, 1
 	slt $t6, $s2, $s3
